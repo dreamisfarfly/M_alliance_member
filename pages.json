@@ -16,6 +16,16 @@
             }
             
         }
+        ,{
+            "path" : "pages/membershipCard/membershipCard",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
