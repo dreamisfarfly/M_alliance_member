@@ -1,7 +1,7 @@
 <template>
   <!-- start menu -->
   <view class="menu">
-    <view class="menu-list" v-for="(item, key) in menuList" :key="key">
+    <view class="menu-list" v-for="(item, key) in menuList" :key="key" @click="redirect(item.path)">
       <view
         class="interior-vessel"
         :style="[
@@ -69,7 +69,14 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    // 跳转页面
+    redirect(path) {
+      uni.navigateTo({
+        url: path,
+      });
+    },
+  },
 };
 </script>
 
