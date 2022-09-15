@@ -59,6 +59,14 @@
                 "navigationBarTitleText": "账单",
                 "enablePullDownRefresh": false
             }
+        },
+        {
+            "path" : "pages/membershipCard/recordedSecurities",
+            "style" :
+            {
+                "navigationBarTitleText": "优惠券使用记录",
+                "enablePullDownRefresh": false
+            }
         }
     ],
 	"globalStyle": {

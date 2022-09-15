@@ -117,6 +117,7 @@ export default {
           icon: "/static/images/recorded-securities-icon.png",
           name: "用券记录",
           hint: "",
+          path: '/pages/membershipCard/recordedSecurities'
         },
         {
           icon: "/static/images/online-mall-icon.png",
