@@ -15,7 +15,8 @@ export default {
         menuList: [
             {
                 icon: '/static/images/lock-on-icon.png',
-                name: '密码管理'
+                name: '密码管理',
+                path: '/pages/membershipCard/settingPassword'
             },
             {
                 icon: '/static/images/mobile-icon.png',
