@@ -1,4 +1,7 @@
 {
+    "easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
 	"pages": [
 		{
 			"path": "pages/index/index",
@@ -46,6 +49,14 @@
             "style" :
             {
                 "navigationBarTitleText": "设置密码",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path" : "pages/membershipCard/expenseCalendar",
+            "style" :
+            {
+                "navigationBarTitleText": "账单",
                 "enablePullDownRefresh": false
             }
         }

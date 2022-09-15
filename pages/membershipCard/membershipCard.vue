@@ -111,6 +111,7 @@ export default {
           icon: "/static/images/expense-calendar-icon.png",
           name: "消费记录",
           hint: "累积消费￥1200.00",
+          path: '/pages/membershipCard/expenseCalendar'
         },
         {
           icon: "/static/images/recorded-securities-icon.png",
