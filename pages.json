@@ -40,6 +40,14 @@
                 "navigationBarTitleText": "设置密码",
                 "enablePullDownRefresh": false
             }
+        },
+        {
+            "path" : "pages/membershipCard/mobilePhoneBinding",
+            "style" :
+            {
+                "navigationBarTitleText": "设置密码",
+                "enablePullDownRefresh": false
+            }
         }
     ],
 	"globalStyle": {

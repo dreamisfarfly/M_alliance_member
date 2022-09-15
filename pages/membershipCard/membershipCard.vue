@@ -129,6 +129,7 @@ export default {
           icon: "/static/images/setting-icon.png",
           name: "设置",
           hint: "",
+          path: '/pages/membershipCard/setting'
         },
       ],
     };

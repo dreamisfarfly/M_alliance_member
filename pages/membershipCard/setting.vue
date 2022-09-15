@@ -20,7 +20,8 @@ export default {
             },
             {
                 icon: '/static/images/mobile-icon.png',
-                name: '手机绑定'
+                name: '手机绑定',
+                path: '/pages/membershipCard/mobilePhoneBinding'
             }
         ],
         iconSize: {
