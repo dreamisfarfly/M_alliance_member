@@ -67,6 +67,15 @@
                 "navigationBarTitleText": "优惠券使用记录",
                 "enablePullDownRefresh": false
             }
+        },
+        {
+            "path" : "pages/membershipCard/purchaseUpgrade",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+                "navigationStyle":"custom"
+            }
         }
     ],
 	"globalStyle": {

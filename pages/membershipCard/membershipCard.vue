@@ -41,7 +41,7 @@
                 />
                 <text class="vip-validity">有效期至 2022年6月27日</text>
               </view>
-              <view class="purchase-upgrade">付费升级</view>
+              <view class="purchase-upgrade" @click="payUpgrade">付费升级</view>
             </view>
             <!-- end 会员卡头部用户VIP信息 -->
           </view>
@@ -136,7 +136,14 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    // 付费升级
+    payUpgrade() {
+      uni.navigateTo({
+        url: '/pages/membershipCard/purchaseUpgrade'
+      })
+    }
+  },
   components: { Menu },
 };
 </script>

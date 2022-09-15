@@ -23,7 +23,7 @@
 <script>
 export default {
   props: {
-    // 优惠劵列表
+    // 优惠劵
     coupon: {
       typeof: Object,
       default: function () {
