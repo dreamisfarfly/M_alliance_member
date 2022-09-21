@@ -46,7 +46,7 @@
     </view>
     <!-- end classify-menu -->
     <view class="classify-content">
-
+        <slot name="content"></slot>
     </view>
   </view>
   <!-- end classify -->
@@ -114,6 +114,7 @@ export default {
 .classify {
   width: 100%;
   height: 100%;
+  display: flex;
   .classify-menu {
     width: 160rpx;
     height: 100%;
@@ -159,6 +160,7 @@ export default {
     }
   }
   .classify-content{
+    flex: 1;
     padding: 0 30rpx;
     box-sizing: border-box;
   }

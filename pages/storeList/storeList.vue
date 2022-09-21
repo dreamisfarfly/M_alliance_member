@@ -13,7 +13,11 @@
     <!-- start store-list-content -->
     <view class="store-list-content">
       <view style="height:100vh;">
-        <Classify :classifyList="classifyList"></Classify>
+        <Classify :classifyList="classifyList">
+          <template v-slot:content>
+            <ShopCard v-for="(item,key) in 6" :key="key"></ShopCard>
+          </template>
+        </Classify>
       </view>
     </view>
     <!-- end store-list-content -->
@@ -34,6 +38,7 @@
 <script>
 import Search from "@/components/search/search.vue";
 import Classify from "../../components/classify/classify.vue";
+import ShopCard from "../../components/shopCard/shopCard.vue";
 export default {
   data() {
     return {
@@ -145,7 +150,7 @@ export default {
       ],
     };
   },
-  components: { Search, Classify },
+  components: { Search, Classify, ShopCard },
   methods: {
     // 搜索
     searchFun() {},
@@ -164,9 +169,5 @@ export default {
   padding: 8rpx 30rpx;
   background: #ffffff;
   box-sizing: border-box;
-}
-
-.store-list-content {
-    
 }
 </style>
