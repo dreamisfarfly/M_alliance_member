@@ -7,7 +7,7 @@
       <view class="shop-info">
         <view class="shop-info-name">长沙山水健康体检中心</view>
         <view class="score-info">
-          <score evaluationScore="4" />
+          <score :evaluationScore="4" />
           <view class="popular-value"
             >人气值：<text style="color: #da9b49">10000</text></view
           >
