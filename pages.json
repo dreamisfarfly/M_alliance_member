@@ -73,6 +73,18 @@
 					}
 				}
             }
+        },
+        {
+            "path" : "pages/membershipCard/shopEvaluation",
+            "style" :
+            {
+                "navigationBarTitleText": "店铺评价",
+                "app-plus": {
+					"titleNView": {
+						"autoBackButton": false
+					}
+				}
+            }
         }
     ],
 	"globalStyle": {
