@@ -15,7 +15,7 @@
       <view style="height:100vh;">
         <Classify :classifyList="classifyList">
           <template v-slot:content>
-            <ShopCard v-for="(item,key) in 6" :key="key"></ShopCard>
+            <ShopCard v-for="(item,key) in 10" :key="key"></ShopCard>
           </template>
         </Classify>
       </view>

@@ -46,7 +46,9 @@
     </view>
     <!-- end classify-menu -->
     <view class="classify-content">
+      <scroll-view scroll-y="true" style="height: 100%;">
         <slot name="content"></slot>
+      </scroll-view>
     </view>
   </view>
   <!-- end classify -->
@@ -79,15 +81,15 @@ export default {
       } else {
         let _str = "" + this.selectVal;
         let strArr = _str.split("|");
-        let arr = strArr.slice(0,hierarchy-1);
-        this.selectVal = '';
+        let arr = strArr.slice(0, hierarchy - 1);
+        this.selectVal = "";
         arr.push(id);
         for (let i = 0; i < arr.length; i++) {
-            if(i == 0){
-                this.selectVal += arr[i]
-            }else{
-                this.selectVal += ('|'+arr[i])
-            }
+          if (i == 0) {
+            this.selectVal += arr[i];
+          } else {
+            this.selectVal += "|" + arr[i];
+          }
         }
       }
       this.selectIndex = id;
@@ -159,9 +161,11 @@ export default {
       }
     }
   }
-  .classify-content{
+  .classify-content {
     flex: 1;
+    height: 100%;
     padding: 0 30rpx;
+    padding-bottom: 10rpx;
     box-sizing: border-box;
   }
 }
