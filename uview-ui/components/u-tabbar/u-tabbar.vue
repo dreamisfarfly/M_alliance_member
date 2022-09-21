@@ -21,7 +21,7 @@
 						:color="elColor(index)"
 						:custom-prefix="item.customIcon ? 'custom-icon' : 'uicon'"
 					></u-icon>
-					<u-badge :count="item.count" :is-dot="item.isDot"
+					<u-badge :count="item.count" :is-dot="item.isDot" :bgColor="countLabelBgColor" :fontSize="countLabelFontSize"
 						v-if="item.count || item.isDot"
 						:offset="[-2, getOffsetRight(item.count, item.isDot)]"
 					></u-badge>
@@ -117,6 +117,15 @@
 				type: Boolean,
 				default: true
 			},
+			// 数量背景色
+			countLabelBgColor: {
+				type: String,
+				default: 'red'
+			},
+			countLabelFontSize: {
+				type: String,
+				default: '24'
+			}
 		},
 		data() {
 			return {

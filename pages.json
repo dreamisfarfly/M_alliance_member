@@ -92,5 +92,19 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#FFFFFF",
 		"backgroundColor": "#F8F8F8"
+	},
+    "tabBar": {
+		"color": "#999999",
+		"selectedColor": "#C78125",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/membershipCard/membershipCard"
+			},
+			{
+				"pagePath": "pages/messageNotification/messageNotification"
+			}
+		]
 	}
 }

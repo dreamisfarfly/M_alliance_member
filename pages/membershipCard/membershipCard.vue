@@ -88,7 +88,16 @@
       <!-- end  菜单内容 -->
     </view>
     <!-- start 会员卡 -->
-    <u-tabbar v-model="current" :list="bottomMenuList" inactive-color="#999999" active-color="#C78125" height="110" icon-size="48"></u-tabbar>
+    <u-tabbar
+      v-model="current"
+      :list="bottomMenuList"
+      inactive-color="#999999"
+      active-color="#C78125"
+      height="110"
+      icon-size="48"
+      countLabelBgColor="#C78125"
+      countLabelFontSize="16"
+    ></u-tabbar>
   </view>
   <!-- end 会员卡 -->
 </template>
@@ -101,30 +110,32 @@ export default {
       // 底部菜单列表
       bottomMenuList: [
         {
-          iconPath: '/static/images/membership-card-menu-icon.png',
-          selectedIconPath: '/static/images/select-membership-card-menu-icon.png',
-          text: '会员卡',
-          pagePath: '/pages/membershipCard/membershipCard'
+          iconPath: "/static/images/membership-card-menu-icon.png",
+          selectedIconPath:
+            "/static/images/select-membership-card-menu-icon.png",
+          text: "会员卡",
+          pagePath: "/pages/membershipCard/membershipCard",
         },
         {
-          iconPath: '/static/images/shop-list-icon.png',
-          selectedIconPath: '/static/images/select-shop-list-icon.png',
-          text: '门店列表',
-          pagePath: ''
+          iconPath: "/static/images/shop-list-icon.png",
+          selectedIconPath: "/static/images/select-shop-list-icon.png",
+          text: "门店列表",
+          pagePath: "",
         },
         {
-          iconPath: '/static/images/more-discount-icon.png',
-          selectedIconPath: '/static/images/select-more-discount-icon.png',
-          text: '更多优惠',
-          pagePath: ''
+          iconPath: "/static/images/more-discount-icon.png",
+          selectedIconPath: "/static/images/select-more-discount-icon.png",
+          text: "更多优惠",
+          pagePath: ""
         },
         {
-          iconPath: '/static/images/message-notification-icon.png',
-          selectedIconPath: '/static/images/select-message-notification-icon.png',
-          text: '消息通知',
-          pagePath: '/pages/messageNotification/messageNotification',
-          count: 1
-        }
+          iconPath: "/static/images/message-notification-icon.png",
+          selectedIconPath:
+            "/static/images/select-message-notification-icon.png",
+          text: "消息通知",
+          pagePath: "/pages/messageNotification/messageNotification",
+          count: 1,
+        },
       ],
       // 当前浏览页
       current: 0,
@@ -142,13 +153,13 @@ export default {
           icon: "/static/images/expense-calendar-icon.png",
           name: "消费记录",
           hint: "累积消费￥1200.00",
-          path: '/pages/membershipCard/expenseCalendar'
+          path: "/pages/membershipCard/expenseCalendar",
         },
         {
           icon: "/static/images/recorded-securities-icon.png",
           name: "用券记录",
           hint: "",
-          path: '/pages/membershipCard/recordedSecurities'
+          path: "/pages/membershipCard/recordedSecurities",
         },
         {
           icon: "/static/images/online-mall-icon.png",
@@ -162,7 +173,7 @@ export default {
           icon: "/static/images/setting-icon.png",
           name: "设置",
           hint: "",
-          path: '/pages/membershipCard/setting'
+          path: "/pages/membershipCard/setting",
         },
       ],
     };
@@ -171,9 +182,9 @@ export default {
     // 付费升级
     payUpgrade() {
       uni.navigateTo({
-        url: '/pages/membershipCard/purchaseUpgrade'
-      })
-    }
+        url: "/pages/membershipCard/purchaseUpgrade",
+      });
+    },
   },
   components: { Menu },
 };

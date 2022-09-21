@@ -1,75 +1,121 @@
 <template>
-  <!-- start message-notification -->
-  <view class="message-notification">
-    <!-- start message-notification-content -->
-    <view class="message-notification-content">
-      <u-waterfall v-model="messageList">
-        <template v-slot:left="{ leftList }">
-          <view
-            class="message-list"
-            v-for="(item, index) in leftList"
-            :key="index"
-          >
-            <view class="img-box">
-              <img class="img-box-icon" :src="item.image" />
-              <view class="img-info">
-                <view class="address-information">
-                  <img class="site-icon" src="/static/images/site-icon.png" />
-                  <text class="site-name">{{ item.address }}</text>
-                </view>
-                <view class="browse-info">
-                  <img
-                    class="browse-info-icon"
-                    src="/static/images/browse-icon.png"
-                  />
-                  <text class="browse-info-count">{{ item.count }}</text>
-                </view>
-              </view>
-            </view>
-            <view class="message-list-title">
-              {{ item.title }}
-            </view>
-          </view>
-        </template>
-        <template v-slot:right="{ rightList }">
-          <view
-            class="message-list"
-            style="margin-left: 12rpx"
-            v-for="(item, index) in rightList"
-            :key="index"
-          >
-            <view class="img-box">
-              <img class="img-box-icon" :src="item.image" />
-              <view class="img-info">
-                <view class="address-information">
-                  <img class="site-icon" src="/static/images/site-icon.png" />
-                  <text class="site-name">{{ item.address }}</text>
-                </view>
-                <view class="browse-info">
-                  <img
-                    class="browse-info-icon"
-                    src="/static/images/browse-icon.png"
-                  />
-                  <text class="browse-info-count">{{ item.count }}</text>
+  <view>
+    <!-- start message-notification -->
+    <view class="message-notification">
+      <!-- start message-notification-content -->
+      <view class="message-notification-content">
+        <u-waterfall v-model="messageList">
+          <template v-slot:left="{ leftList }">
+            <view
+              class="message-list"
+              v-for="(item, index) in leftList"
+              :key="index"
+            >
+              <view class="img-box">
+                <img class="img-box-icon" :src="item.image" />
+                <view class="img-info">
+                  <view class="address-information">
+                    <img class="site-icon" src="/static/images/site-icon.png" />
+                    <text class="site-name">{{ item.address }}</text>
+                  </view>
+                  <view class="browse-info">
+                    <img
+                      class="browse-info-icon"
+                      src="/static/images/browse-icon.png"
+                    />
+                    <text class="browse-info-count">{{ item.count }}</text>
+                  </view>
                 </view>
               </view>
+              <view class="message-list-title">
+                {{ item.title }}
+              </view>
             </view>
-            <view class="message-list-title">
-              {{ item.title }}
+          </template>
+          <template v-slot:right="{ rightList }">
+            <view
+              class="message-list"
+              style="margin-left: 12rpx"
+              v-for="(item, index) in rightList"
+              :key="index"
+            >
+              <view class="img-box">
+                <img class="img-box-icon" :src="item.image" />
+                <view class="img-info">
+                  <view class="address-information">
+                    <img class="site-icon" src="/static/images/site-icon.png" />
+                    <text class="site-name">{{ item.address }}</text>
+                  </view>
+                  <view class="browse-info">
+                    <img
+                      class="browse-info-icon"
+                      src="/static/images/browse-icon.png"
+                    />
+                    <text class="browse-info-count">{{ item.count }}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="message-list-title">
+                {{ item.title }}
+              </view>
             </view>
-          </view>
-        </template>
-      </u-waterfall>
+          </template>
+        </u-waterfall>
+      </view>
+      <!-- end message-notification-content -->
     </view>
-    <!-- end message-notification-content -->
+    <!-- end message-notification -->
+    <!-- start 底部导航 -->
+    <u-tabbar
+      v-model="current"
+      :list="bottomMenuList"
+      inactive-color="#999999"
+      active-color="#C78125"
+      height="110"
+      icon-size="48"
+      countLabelBgColor="#C78125"
+      countLabelFontSize="16"
+    ></u-tabbar>
+    <!-- end 底部导航 -->
   </view>
-  <!-- end message-notification -->
 </template>
 
 <script>
 export default {
   data() {
     return {
+      // 底部菜单列表
+      bottomMenuList: [
+        {
+          iconPath: "/static/images/membership-card-menu-icon.png",
+          selectedIconPath:
+            "/static/images/select-membership-card-menu-icon.png",
+          text: "会员卡",
+          pagePath: "/pages/membershipCard/membershipCard",
+        },
+        {
+          iconPath: "/static/images/shop-list-icon.png",
+          selectedIconPath: "/static/images/select-shop-list-icon.png",
+          text: "门店列表",
+          pagePath: "",
+        },
+        {
+          iconPath: "/static/images/more-discount-icon.png",
+          selectedIconPath: "/static/images/select-more-discount-icon.png",
+          text: "更多优惠",
+          pagePath: "",
+        },
+        {
+          iconPath: "/static/images/message-notification-icon.png",
+          selectedIconPath:
+            "/static/images/select-message-notification-icon.png",
+          text: "消息通知",
+          pagePath: "/pages/messageNotification/messageNotification",
+          count: 1,
+        },
+      ],
+      // 当前浏览页
+      current: 3,
       // 消息列表
       messageList: [
         {
