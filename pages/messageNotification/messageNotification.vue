@@ -97,7 +97,7 @@ export default {
           iconPath: "/static/images/shop-list-icon.png",
           selectedIconPath: "/static/images/select-shop-list-icon.png",
           text: "门店列表",
-          pagePath: "",
+          pagePath: "/pages/storeList/storeList",
         },
         {
           iconPath: "/static/images/more-discount-icon.png",

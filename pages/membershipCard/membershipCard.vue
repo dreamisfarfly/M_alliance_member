@@ -87,7 +87,7 @@
       </view>
       <!-- end  菜单内容 -->
     </view>
-    <!-- start 会员卡 -->
+    <!-- start 底部导航 -->
     <u-tabbar
       v-model="current"
       :list="bottomMenuList"
@@ -98,6 +98,7 @@
       countLabelBgColor="#C78125"
       countLabelFontSize="16"
     ></u-tabbar>
+    <!-- end 底部导航 -->
   </view>
   <!-- end 会员卡 -->
 </template>
@@ -120,13 +121,13 @@ export default {
           iconPath: "/static/images/shop-list-icon.png",
           selectedIconPath: "/static/images/select-shop-list-icon.png",
           text: "门店列表",
-          pagePath: "",
+          pagePath: "/pages/storeList/storeList",
         },
         {
           iconPath: "/static/images/more-discount-icon.png",
           selectedIconPath: "/static/images/select-more-discount-icon.png",
           text: "更多优惠",
-          pagePath: ""
+          pagePath: "",
         },
         {
           iconPath: "/static/images/message-notification-icon.png",
