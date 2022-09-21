@@ -9,12 +9,46 @@
     <!-- end shop-evaluation-award-card -->
     <!-- start shop-evaluation-form-card -->
     <view class="shop-evaluation-form-card">
+      <!-- start shop-evaluation-form-card-header -->
       <view class="shop-evaluation-form-card-header">
         <view class="shop-evaluation-form-card-header-name">湖南山水体验</view>
         <view class="evaluate-vessel">
+          <img
+            class="evaluate-vessel-icon"
+            v-if="form.status == 0"
+            src="/static/images/not-gouxuan-icon.png"
+            @click="form.status = 1"
+          />
+          <img
+            class="evaluate-vessel-icon"
+            v-if="form.status == 1"
+            src="/static/images/select-gouxuan-icon.png"
+            @click="form.status = 0"
+          />
           <text class="evaluate-vessel-name">匿名评价</text>
         </view>
       </view>
+      <!-- end shop-evaluation-form-card-header -->
+      <!-- start score-vessel -->
+      <view class="score-vessel">
+        <Score
+          @compileScore="compileScore"
+          :evaluationScore="scoreCount"
+          iconType="score"
+          :sizeIcon="{ width: 60, height: 58 }"
+        ></Score>
+      </view>
+      <!-- end score-vessel -->
+      <!-- start comment-vessel -->
+      <view class="comment-vessel">
+        <textarea placeholder="请输入评论内容" />
+      </view>
+      <!-- end comment-vessel -->
+      <!-- start img-upload -->
+      <view class="img-upload">
+        <CommentUploadPicture />
+      </view>
+      <!-- end img-upload -->
     </view>
     <!-- end shop-evaluation-form-card -->
     <!-- start hint -->
@@ -30,10 +64,29 @@
 </template>
 
 <script>
+import Score from "@/components/score/score.vue";
+import CommentUploadPicture from "@/components/commentUploadPicture/commentUploadPicture.vue";
 export default {
+  data() {
+    return {
+      // 评分数
+      scoreCount: 0,
+      // 表单
+      form: {
+        status: 0,
+      },
+    };
+  },
   mounted() {
     var a = document.getElementsByClassName("uni-page-head-hd")[0];
     a.style.opacity = 0;
+  },
+  components: { Score, CommentUploadPicture },
+  methods: {
+    // 评分编辑
+    compileScore(score) {
+      this.scoreCount = score;
+    },
   },
 };
 </script>
@@ -80,12 +133,39 @@ export default {
       .evaluate-vessel {
         display: flex;
         align-items: center;
+        .evaluate-vessel-icon {
+          width: 24rpx;
+          height: 24rpx;
+        }
         .evaluate-vessel-name {
           margin-left: 6rpx;
           font-size: 24rpx;
           font-weight: 400;
           color: #999999;
         }
+      }
+    }
+    .score-vessel {
+      display: flex;
+      justify-content: center;
+      padding: 50rpx 0 42rpx 0;
+    }
+    .img-upload {
+      margin-top: 30rpx;
+    }
+    .comment-vessel {
+      width: 100%;
+      height: 266rpx;
+      background: #f9f9f9;
+      border-radius: 16rpx;
+      padding: 20rpx 28rpx;
+      box-sizing: border-box;
+      .textarea {
+        width: 100%;
+        height: 100%;
+        font-size: 28rpx;
+        font-weight: 400;
+        color: #333333;
       }
     }
   }
