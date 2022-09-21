@@ -88,6 +88,7 @@
       <!-- end  菜单内容 -->
     </view>
     <!-- start 会员卡 -->
+    <u-tabbar v-model="current" :list="bottomMenuList" inactive-color="#999999" active-color="#C78125" height="110" icon-size="48"></u-tabbar>
   </view>
   <!-- end 会员卡 -->
 </template>
@@ -97,6 +98,31 @@ import Menu from "@/components/menu/menu.vue";
 export default {
   data() {
     return {
+      // 底部菜单列表
+      bottomMenuList: [
+        {
+          iconPath: '/static/images/membership-card-menu-icon.png',
+          selectedIconPath: '/static/images/select-membership-card-menu-icon.png',
+          text: '会员卡',
+        },
+        {
+          iconPath: '/static/images/shop-list-icon.png',
+          selectedIconPath: '/static/images/select-shop-list-icon.png',
+          text: '门店列表',
+        },
+        {
+          iconPath: '/static/images/more-discount-icon.png',
+          selectedIconPath: '/static/images/select-more-discount-icon.png',
+          text: '更多优惠',
+        },
+        {
+          iconPath: '/static/images/message-notification-icon.png',
+          selectedIconPath: '/static/images/select-message-notification-icon.png',
+          text: '消息通知',
+        }
+      ],
+      // 当前浏览页
+      current: 0,
       // 菜单1
       menuList1: [
         {
@@ -300,7 +326,7 @@ export default {
   height: auto;
   padding: 0 30rpx;
   padding-top: 30rpx;
-  padding-bottom: 80rpx;
+  padding-bottom: 120rpx;
   background: #f9f9f9;
   box-sizing: border-box;
   border-radius: 24rpx;
