@@ -63,12 +63,15 @@
             }
         },
         {
-            "path" : "pages/membershipCard/purchaseUpgrade",
+            "path" : "pages/messageNotification/messageNotification",
             "style" :
             {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
-                "navigationStyle":"custom"
+                "navigationBarTitleText": "消息",
+                "app-plus": {
+					"titleNView": {
+						"autoBackButton": false
+					}
+				}
             }
         }
     ],

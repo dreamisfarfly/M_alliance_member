@@ -104,21 +104,26 @@ export default {
           iconPath: '/static/images/membership-card-menu-icon.png',
           selectedIconPath: '/static/images/select-membership-card-menu-icon.png',
           text: '会员卡',
+          pagePath: '/pages/membershipCard/membershipCard'
         },
         {
           iconPath: '/static/images/shop-list-icon.png',
           selectedIconPath: '/static/images/select-shop-list-icon.png',
           text: '门店列表',
+          pagePath: ''
         },
         {
           iconPath: '/static/images/more-discount-icon.png',
           selectedIconPath: '/static/images/select-more-discount-icon.png',
           text: '更多优惠',
+          pagePath: ''
         },
         {
           iconPath: '/static/images/message-notification-icon.png',
           selectedIconPath: '/static/images/select-message-notification-icon.png',
           text: '消息通知',
+          pagePath: '/pages/messageNotification/messageNotification',
+          count: 1
         }
       ],
       // 当前浏览页
