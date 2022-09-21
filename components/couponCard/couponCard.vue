@@ -2,18 +2,34 @@
   <!-- start coupon-card -->
   <view class="coupon-card">
     <view class="coupon-card-basic-information">
-      <img class="information-img" v-if="coupon.type==0" src="/static/images/time-card-icon.png" />
-      <img class="information-img" v-if="coupon.type==1" src="/static/images/consumer-voucher-icon.png" />
-      <img class="information-img" v-if="coupon.type==2" src="/static/images/cash-coupon-icon.png" />
-      <view class="information-title">{{coupon.title}}</view>
-      <view class="information-title">{{coupon.subheading}}</view>
+      <img
+        class="information-img"
+        v-if="coupon.type == 0"
+        src="/static/images/time-card-icon.png"
+      />
+      <img
+        class="information-img"
+        v-if="coupon.type == 1"
+        src="/static/images/consumer-voucher-icon.png"
+      />
+      <img
+        class="information-img"
+        v-if="coupon.type == 2"
+        src="/static/images/cash-coupon-icon.png"
+      />
+      <view class="information-title">{{ coupon.title }}</view>
+      <view class="information-title">{{ coupon.subheading }}</view>
     </view>
     <view class="coupon-card-basic-detailed-information">
       <view class="detailed-information-name">仅限体验套餐使用</view>
       <view class="detailed-information-time">核销时间：2022-8-2916:32:24</view>
       <view class="detailed-information-verification">
         <view class="verification-person">核销人：张三</view>
-        <view class="shop-evaluation">店铺评价</view>
+        <view
+          class="shop-evaluation"
+          @click="jump('/pages/membershipCard/shopEvaluation')"
+          >店铺评价</view
+        >
       </view>
     </view>
   </view>
@@ -29,6 +45,14 @@ export default {
       default: function () {
         return {};
       },
+    },
+  },
+  methods: {
+    // 跳转
+    jump(path) {
+      uni.navigateTo({
+        url: path,
+      });
     },
   },
 };
