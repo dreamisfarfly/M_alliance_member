@@ -50,7 +50,9 @@
       <!-- end coupon-info-card-header -->
       <!-- start coupon-info-card-value -->
       <view class="coupon-info-card-value">
-        <template v-if="scene == 'purchaseCardVoucher'">{{coupon.rule}}</template>
+        <template v-if="scene == 'purchaseCardVoucher'">{{
+          coupon.rule
+        }}</template>
         <template
           v-if="
             scene == 'listShow' ||
@@ -77,8 +79,10 @@
       <!-- end coupon-info-card-separator -->
       <!-- start coupon-info-card-expiration-time -->
       <view class="coupon-info-card-expiration-time">
-        <text v-if="scene == 'purchaseCardVoucher'">适用门店</text>
-        <text v-if="scene == 'purchaseCardVoucher'"
+        <text v-if="scene == 'purchaseCardVoucher'" @click="applyStores"
+          >适用门店</text
+        >
+        <text v-if="scene == 'purchaseCardVoucher'" @click="applyStores"
           >154家
           <text style="color: #c78125; margin-left: 10rpx">点击查看</text
           >></text
@@ -90,6 +94,7 @@
           >领取后30天有效</text
         >
         <text
+          @click="applyStores"
           v-if="
             scene == 'listShow' || scene == 'listBuy' || scene == 'myCoupon'
           "
@@ -128,12 +133,18 @@ export default {
       console.log(111);
       this.$emit("addCoupon");
     },
+    // 适用门店
+    applyStores() {
+      uni.navigateTo({
+        url: "/pages/membershipCard/applyStores",
+      });
+    },
     // 购买卡劵
     buyCoupon() {
       uni.navigateTo({
-      	url: '/pages/membershipCard/purchaseCardVoucher'
-      })
-    }
+        url: "/pages/membershipCard/purchaseCardVoucher",
+      });
+    },
   },
 };
 </script>
