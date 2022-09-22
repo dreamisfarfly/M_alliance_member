@@ -94,6 +94,17 @@
                     }
                 }
             }
+        },
+        {
+            "path": "pages/membershipCard/purchaseCardVoucher",
+            "style": {
+                "navigationBarTitleText": "购买卡券",
+                "app-plus": {
+                    "titleNView": {
+                        "autoBackButton": false
+                    }
+                }
+            }
         }
     ],
     "globalStyle": {

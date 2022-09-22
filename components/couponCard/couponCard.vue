@@ -50,16 +50,26 @@
       <!-- end coupon-info-card-header -->
       <!-- start coupon-info-card-value -->
       <view class="coupon-info-card-value">
-        <template v-if="coupon.type == 0">
-          <view class="justification">
-            <text>价值 188元</text>
-            <text v-if="scene == 'listBuy'" style="color: #c78125"
-              >¥5.00/100积分</text
-            >
-          </view>
+        <template v-if="scene == 'purchaseCardVoucher'">{{coupon.rule}}</template>
+        <template
+          v-if="
+            scene == 'listShow' ||
+            scene == 'listBuy' ||
+            scene == 'myCoupon' ||
+            screen == 'addShow'
+          "
+        >
+          <template v-if="coupon.type == 0">
+            <view class="justification">
+              <text>价值 188元</text>
+              <text v-if="scene == 'listBuy'" style="color: #c78125"
+                >¥5.00/100积分</text
+              >
+            </view>
+          </template>
+          <template v-if="coupon.type == 1">满100减10元现金券</template>
+          <template v-if="coupon.type == 2">现金直接抵扣</template>
         </template>
-        <template v-if="coupon.type == 1">满100减10元现金券</template>
-        <template v-if="coupon.type == 2">现金直接抵扣</template>
       </view>
       <!-- end coupon-info-card-value -->
       <!-- start coupon-info-card-separator -->
@@ -67,6 +77,12 @@
       <!-- end coupon-info-card-separator -->
       <!-- start coupon-info-card-expiration-time -->
       <view class="coupon-info-card-expiration-time">
+        <text v-if="scene == 'purchaseCardVoucher'">适用门店</text>
+        <text v-if="scene == 'purchaseCardVoucher'"
+          >154家
+          <text style="color: #c78125; margin-left: 10rpx">点击查看</text
+          >></text
+        >
         <text v-if="scene == 'listBuy' || scene == 'myCoupon'"
           >有效期至 2022年6月27日</text
         >
