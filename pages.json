@@ -105,6 +105,14 @@
                     }
                 }
             }
+        },
+        {
+            "path": "pages/membershipCard/applyStores",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+                "navigationStyle": "custom"
+            }
         }
     ],
     "globalStyle": {
