@@ -1,15 +1,15 @@
 <template>
     <!-- start recorded-securities -->
     <view class="recorded-securities">
-        <coupon-card v-for="(item,key) in usageRecordList" :key="key" :coupon="item"></coupon-card>
+        <CouponRecordedSecuritiesCard v-for="(item,key) in usageRecordList" :key="key" :coupon="item"></CouponRecordedSecuritiesCard>
     </view>
     <!-- end recorded-securities -->
 </template>
 
 <script>
-import couponCard from '@/components/couponCard/couponCard.vue';
+import CouponRecordedSecuritiesCard from '@/components/couponRecordedSecuritiesCard/couponRecordedSecuritiesCard.vue';
 export default {
-  components: { couponCard },
+  components: { CouponRecordedSecuritiesCard },
   data() {
     return {
         // 使用记录

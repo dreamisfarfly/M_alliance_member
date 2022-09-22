@@ -166,6 +166,7 @@ export default {
           icon: "/static/images/online-mall-icon.png",
           name: "线上商城",
           hint: "品牌折扣 会员专享",
+          path: "/pages/membershipCard/myCardVoucher",
         },
       ],
       // 菜单3

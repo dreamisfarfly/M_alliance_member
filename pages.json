@@ -83,6 +83,17 @@
                 "enablePullDownRefresh": false,
                 "navigationStyle": "custom"
             }
+        },
+        {
+            "path": "pages/membershipCard/myCardVoucher",
+            "style": {
+                "navigationBarTitleText": "我的卡券",
+                "app-plus": {
+                    "titleNView": {
+                        "autoBackButton": false
+                    }
+                }
+            }
         }
     ],
     "globalStyle": {
