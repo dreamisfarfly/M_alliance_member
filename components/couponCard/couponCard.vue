@@ -36,7 +36,7 @@
         <view
           class="addition-btn"
           v-if="scene == 'listBuy' && coupon.status == 0"
-          @click="addCoupon"
+          @click="buyCoupon"
           >购买</view
         >
         <view
@@ -128,6 +128,12 @@ export default {
       console.log(111);
       this.$emit("addCoupon");
     },
+    // 购买卡劵
+    buyCoupon() {
+      uni.navigateTo({
+      	url: '/pages/membershipCard/purchaseCardVoucher'
+      })
+    }
   },
 };
 </script>
