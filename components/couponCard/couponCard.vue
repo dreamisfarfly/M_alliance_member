@@ -56,7 +56,7 @@
             scene == 'listShow' ||
             scene == 'listBuy' ||
             scene == 'myCoupon' ||
-            screen == 'addShow'
+            scene == 'addShow'
           "
         >
           <template v-if="coupon.type == 0">
