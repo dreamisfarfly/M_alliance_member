@@ -244,8 +244,8 @@ export default {
     font-weight: 600;
     color: #333333;
   }
-  .column-list-content {
-  }
+//   .column-list-content {
+//   }
 }
 
 .consume-vessel {
