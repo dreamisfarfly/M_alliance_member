@@ -169,7 +169,9 @@
       </template>
       <!-- end 会员特权 -->
       <!-- start 用户评价 -->
-      <template v-if="selectIndex == 1"></template>
+      <template v-if="selectIndex == 1">
+        <ViewComments></ViewComments>
+      </template>
       <!-- end 用户评价 -->
     </view>
     <!-- end store-content -->
@@ -180,8 +182,9 @@
 <script>
 import score from "@/components/score/score.vue";
 import CouponCard from "@/components/couponCard/couponCard.vue";
+import ViewComments from "../../components/viewComments/viewComments.vue";
 export default {
-  components: { score, CouponCard },
+  components: { score, CouponCard, ViewComments },
   data() {
     return {
       couponList: [
