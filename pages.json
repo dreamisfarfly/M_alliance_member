@@ -129,6 +129,14 @@
                 "enablePullDownRefresh": false,
                 "navigationStyle": "custom"
             }
+        },
+        {
+            "path": "pages/membershipCard/couponCode",
+            "style": {
+                "navigationBarTitleText": "券码",
+                "enablePullDownRefresh": false,
+                "navigationStyle": "custom"
+            }
         }
     ],
     "globalStyle": {
