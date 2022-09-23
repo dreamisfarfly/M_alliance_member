@@ -137,6 +137,14 @@
                 "enablePullDownRefresh": false,
                 "navigationStyle": "custom"
             }
+        },
+        {
+            "path": "pages/membershipCard/store",
+            "style": {
+                "navigationBarTitleText": "店铺",
+                "enablePullDownRefresh": false,
+                "navigationStyle": "custom"
+            }
         }
     ],
     "globalStyle": {
