@@ -74,6 +74,74 @@
         <!-- end subscribe-info -->
       </view>
       <!-- end store-card -->
+      <!-- start switch-bar -->
+      <view class="switch-bar">
+        <view
+          class="switch-bar-list"
+          v-for="(item, key) in switchList"
+          @click="selectIndex = key"
+          :key="key"
+        >
+          <view :class="selectIndex == key ? 'selct-list-label' : ''">{{
+            item.label
+          }}</view>
+          <view class="subscript">
+            <img
+              v-if="selectIndex == key"
+              src="/static/images/select-switch-icon.png"
+              class="switch-icon"
+            />
+          </view>
+        </view>
+      </view>
+      <!-- end switch-bar -->
+      <!-- start 会员特权 -->
+      <template v-if="selectIndex == 0">
+        <!-- start 会员折扣 -->
+        <view class="privilege">
+          <!-- start privilege-list -->
+          <view class="privilege-list justify-align">
+            <view class="privilege-info">
+              <view class="privilege-title">会员折扣：8折 </view>
+              <view class="privilege-subheading"
+                >会员折扣全场八折，酒水除外</view
+              >
+            </view>
+            <img
+              src="/static/images/member-discount-icon.png"
+              class="privilege-icon"
+            />
+          </view>
+          <!-- end privilege-list -->
+          <!-- start privilege-list -->
+          <view class="privilege-list justify-align" style="margin-top: 20rpx">
+            <view class="privilege-info">
+              <view class="privilege-title">其他特权 </view>
+              <view class="privilege-subheading"
+                >VIP免费停车； VIP生日特权：赠送生日面一碗；</view
+              >
+            </view>
+            <img
+              src="/static/images/other-privileges-icon.png"
+              class="privilege-icon"
+            />
+          </view>
+          <!-- end privilege-list -->
+        </view>
+        <!-- end 会员折扣 -->
+        <!-- start 会员优惠券 -->
+        <view class="column">
+          <view class="column-name">会员优惠券</view>
+          <view class="column-content">
+            <CouponCard scene="couponMembership" :coupon="item" v-for="(item,key) in couponList" :key="key"/>
+          </view>
+        </view>
+        <!-- end 会员优惠券 -->
+      </template>
+      <!-- end 会员特权 -->
+      <!-- start 用户评价 -->
+      <template v-if="selectIndex == 1"></template>
+      <!-- end 用户评价 -->
     </view>
     <!-- end store-content -->
   </view>
@@ -82,8 +150,36 @@
 
 <script>
 import score from "@/components/score/score.vue";
+import CouponCard from "@/components/couponCard/couponCard.vue";
 export default {
-  components: { score },
+  components: { score, CouponCard },
+  data() {
+    return {
+      couponList: [
+        {
+          type: 0,
+          title: "洁牙卡一次",
+          status: 1,
+        },
+        {
+          type: 2,
+          title: "10元消费券",
+          status: 1,
+        },
+      ],
+      // 选择值
+      selectIndex: 0,
+      // 切换栏
+      switchList: [
+        {
+          label: "会员特权",
+        },
+        {
+          label: "用户评价",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -249,5 +345,80 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.switch-bar {
+  display: flex;
+  width: 100%;
+  height: 132rpx;
+  .switch-bar-list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #999999;
+    margin-right: 88rpx;
+    padding-left: 22rpx;
+    .subscript {
+      margin-top: 6rpx;
+      width: 58rpx;
+      height: 16rpx;
+
+      .switch-icon {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .selct-list-label {
+      font-size: 36rpx;
+      font-weight: 500;
+      color: #333333;
+    }
+  }
+}
+
+.privilege {
+  padding: 0 16rpx;
+  box-sizing: border-box;
+  .privilege-list {
+    padding: 26rpx 28rpx 24rpx 32rpx;
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: 0 8rpx 16rpx 0 rgba(108, 119, 128, 0.05);
+    border-radius: 16rpx;
+    .privilege-info {
+      .privilege-title {
+        font-size: 28rpx;
+        font-weight: 500;
+        color: #c78125;
+      }
+      .privilege-subheading {
+        margin-top: 2rpx;
+        font-size: 10px;
+        font-weight: 400;
+        color: #999999;
+      }
+    }
+    .privilege-icon {
+      width: 72rpx;
+      height: 70rpx;
+    }
+  }
+}
+
+.column {
+  margin-top: 40rpx;
+  .column-name {
+    padding-left: 16rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #333333;
+  }
+  .column-content {
+    margin-top: 22rpx;
+  }
 }
 </style>

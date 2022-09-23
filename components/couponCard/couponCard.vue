@@ -41,7 +41,7 @@
         >
         <view
           class="addition-btn"
-          v-if="scene == 'listBuy' && coupon.status == 1"
+          v-if="(scene == 'listBuy' || scene == 'couponMembership') && coupon.status == 1"
           @click="addCoupon"
           >去使用</view
         >
@@ -58,7 +58,8 @@
             scene == 'listShow' ||
             scene == 'listBuy' ||
             scene == 'myCoupon' ||
-            scene == 'addShow'
+            scene == 'addShow' || 
+            scene == 'couponMembership'
           "
         >
           <template v-if="coupon.type == 0">
@@ -71,6 +72,10 @@
           </template>
           <template v-if="coupon.type == 1">满100减10元现金券</template>
           <template v-if="coupon.type == 2">现金直接抵扣</template>
+          <template v-if="scene == 'couponMembership'">
+            <view style="margin-top: 10rpx;">平台使用规则：XXXXXXXXXXXXXXXXXXXXX</view>
+            <view>门店使用规则：XXXXXXXXXXXXXXXXXXXXX</view>
+          </template>
         </template>
       </view>
       <!-- end coupon-info-card-value -->
@@ -87,7 +92,7 @@
           <text style="color: #c78125; margin-left: 10rpx">点击查看</text
           >></text
         >
-        <text v-if="scene == 'listBuy' || scene == 'myCoupon'"
+        <text v-if="scene == 'listBuy' || scene == 'myCoupon' || scene == 'couponMembership'"
           >有效期至 2022年6月27日</text
         >
         <text v-if="scene == 'listShow' || scene == 'addShow'"
@@ -96,7 +101,7 @@
         <text
           @click="applyStores"
           v-if="
-            scene == 'listShow' || scene == 'listBuy' || scene == 'myCoupon'
+            scene == 'listShow' || scene == 'listBuy' || scene == 'myCoupon' || scene == 'couponMembership'
           "
           >10家门店适用></text
         >
@@ -152,13 +157,14 @@ export default {
 <style lang="less" scoped>
 .coupon-card {
   width: 100%;
-  height: 240rpx;
+  //height: 240rpx;
   background: url("/static/images/discount-coupon-bak.png");
   background-size: 100% 100%;
   display: flex;
   .coupon-type-card {
     width: 152rpx;
-    height: 100%;
+    //height: 100%;
+    height: auto;
     padding-left: 30rpx;
     box-sizing: border-box;
     display: flex;
@@ -174,7 +180,7 @@ export default {
   }
   .coupon-info-card {
     flex: 1;
-    padding: 6rpx 46rpx 18rpx 16rpx;
+    padding: 6rpx 46rpx 42rpx 16rpx;
     box-sizing: border-box;
     .coupon-info-card-header {
       padding-top: 24rpx;
