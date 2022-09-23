@@ -133,10 +133,39 @@
         <view class="column">
           <view class="column-name">会员优惠券</view>
           <view class="column-content">
-            <CouponCard scene="couponMembership" :coupon="item" v-for="(item,key) in couponList" :key="key"/>
+            <CouponCard
+              scene="couponMembership"
+              :coupon="item"
+              v-for="(item, key) in couponList"
+              :key="key"
+            />
           </view>
         </view>
         <!-- end 会员优惠券 -->
+        <!-- start 门头照片 -->
+        <view class="column">
+          <view class="column-name">门头照片</view>
+          <view class="column-content">
+            <img src="" class="photograph" />
+          </view>
+        </view>
+        <!-- end 门头照片 -->
+        <!-- start 门店环境 -->
+        <view class="column">
+          <view class="column-name">门店环境</view>
+          <view class="column-content">
+            <img src="" class="photograph" />
+          </view>
+        </view>
+        <!-- end 门店环境 -->
+        <!-- start 营业执照 -->
+        <view class="column">
+          <view class="column-name">营业执照</view>
+          <view class="column-content">
+            <img src="" class="photograph" />
+          </view>
+        </view>
+        <!-- end 营业执照 -->
       </template>
       <!-- end 会员特权 -->
       <!-- start 用户评价 -->
@@ -411,6 +440,7 @@ export default {
 
 .column {
   margin-top: 40rpx;
+  width: 100%;
   .column-name {
     padding-left: 16rpx;
     font-size: 28rpx;
@@ -420,5 +450,11 @@ export default {
   .column-content {
     margin-top: 22rpx;
   }
+}
+
+.photograph {
+  width: 100%;
+  height: 516rpx;
+  border-radius: 12rpx;
 }
 </style>
