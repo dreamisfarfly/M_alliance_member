@@ -182,7 +182,7 @@
 <script>
 import score from "@/components/score/score.vue";
 import CouponCard from "@/components/couponCard/couponCard.vue";
-import ViewComments from "../../components/viewComments/viewComments.vue";
+import ViewComments from "@/components/viewComments/viewComments.vue";
 export default {
   components: { score, CouponCard, ViewComments },
   data() {
