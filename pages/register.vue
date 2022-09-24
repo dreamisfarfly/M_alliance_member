@@ -134,6 +134,7 @@
 				margin-top: 144rpx;
 				font-family: AlimamaShuHeiTi;
 				font-size: 36rpx;
+                font-weight: 550;
 				color: #333333;
 				letter-spacing: 4rpx;
 			}
