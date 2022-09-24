@@ -142,7 +142,7 @@
 				margin-top: 14rpx;
 				width: 396rpx;
 				height: 2rpx;
-				border: 2rpx solid rgba(253, 233, 205, 0.3);
+			    border-bottom: 2rpx solid rgba(0,0,0,0.3);
 			}
 
 			.equity-subheading {
