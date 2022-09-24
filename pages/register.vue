@@ -214,7 +214,7 @@
 					.required-info-list-name {
 						font-size: 24rpx;
 						font-weight: 400;
-						color: #999999;
+						color: #666666;
 						width: 154rpx;
 					}
 
