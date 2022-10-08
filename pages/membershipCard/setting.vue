@@ -30,6 +30,10 @@ export default {
         }
     };
   },
+  mounted() {
+    var a = document.getElementsByClassName("uni-page-head-hd")[0];
+    a.style.opacity = 0;
+  },
 };
 </script>
 

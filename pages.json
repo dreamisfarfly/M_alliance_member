@@ -44,7 +44,7 @@
         {
             "path": "pages/membershipCard/mobilePhoneBinding",
             "style": {
-                "navigationBarTitleText": "设置密码",
+                "navigationBarTitleText": "手机绑定",
                 "enablePullDownRefresh": false
             }
         },
@@ -161,7 +161,18 @@
                 "enablePullDownRefresh": false,
                 "navigationStyle": "custom"
             }
-        }
+        },
+        {
+            "path": "pages/membershipCard/referralCode",
+			"style": {
+				"navigationBarTitleText": "邀请码",
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": false
+					}
+				}
+			}
+		}
     ],
     "globalStyle": {
         "navigationBarTextStyle": "black",

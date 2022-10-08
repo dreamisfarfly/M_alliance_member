@@ -37,7 +37,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    var a = document.getElementsByClassName("uni-page-head-hd")[0];
+    a.style.opacity = 0;
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -69,8 +74,8 @@ export default {};
         align-items: center;
       }
       .form-list-operation {
-        width: 22rpx;
-        height: 28rpx;
+        width: 20rpx;
+        height: 30rpx;
       }
       .form-list-label {
         font-size: 24rpx;

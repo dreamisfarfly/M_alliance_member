@@ -146,6 +146,7 @@ export default {
           icon: "/static/images/promotion-code-icon.png",
           name: "我的推荐码",
           hint: "每推荐2人赠送1年会籍",
+          path: '/pages/membershipCard/referralCode'
         },
       ],
       // 菜单2

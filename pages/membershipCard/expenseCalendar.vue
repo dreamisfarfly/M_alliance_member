@@ -77,6 +77,10 @@ export default {
       this.selectTime = e.year + "年" + e.month + "月";
     },
   },
+  mounted() {
+    var a = document.getElementsByClassName("uni-page-head-hd")[0];
+    a.style.opacity = 0;
+  },
 };
 </script>
 

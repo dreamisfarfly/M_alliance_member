@@ -1,6 +1,6 @@
 <template>
   <!-- start shop-card -->
-  <view class="shop-card">
+  <view class="shop-card"  @click="$utils.jump('/pages/membershipCard/store')">
     <!-- start shop-info-content -->
     <view class="shop-info-content">
       <img src="" class="shop-img" />
