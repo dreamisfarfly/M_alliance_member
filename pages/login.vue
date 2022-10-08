@@ -47,7 +47,7 @@
           </view>
           <!-- end rememb -->
           <!-- start register -->
-          <view class="register">注册 ></view>
+          <view class="register" @click="$utils.jump('/pages/register')">注册 ></view>
           <!-- end register -->
         </view>
         <!-- end form-operation -->

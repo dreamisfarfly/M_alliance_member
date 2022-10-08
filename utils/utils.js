@@ -17,6 +17,17 @@ function numberTransformation(count) {
     }
 }
 
+/**
+ * 跳转页面
+ * @param {string} page 
+ */
+function jump(page){
+	uni.navigateTo({
+		url: page
+	})
+}
+
 module.exports = {
-    numberTransformation: numberTransformation
+    numberTransformation: numberTransformation,
+    jump: jump
 }
