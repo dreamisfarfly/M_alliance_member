@@ -99,10 +99,13 @@
 </script>
 
 <style scoped lang="scss">
-	.purchase-upgrade {
-		width: 100%;
+	page {
 		background: url("/static/images/register-bak.png");
 		background-size: 100% 100%;
+		padding-bottom: 128rpx;
+	}
+	.purchase-upgrade {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -172,8 +175,9 @@
 					font-weight: 500;
 					color: #382717;
 					letter-spacing: 2rpx;
-					text-align: center;
-					line-height: 54rpx;
+					display: flex;
+					align-items: center;
+					justify-content: center;
 				}
 			}
 		}
@@ -189,7 +193,7 @@
 			display: flex;
 			align-items: center;
 			flex-direction: column;
-			padding-bottom: 100rpx;
+			padding-bottom: 40rpx;
 			box-sizing: border-box;
 
 			.member-vessel-column {

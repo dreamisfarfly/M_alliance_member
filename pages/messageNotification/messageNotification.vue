@@ -23,7 +23,7 @@
                       class="browse-info-icon"
                       src="/static/images/browse-icon.png"
                     />
-                    <text class="browse-info-count">{{ item.count }}</text>
+                    <text class="browse-info-count">{{ $utils.numberTransformation(item.count) }}</text>
                   </view>
                 </view>
               </view>
@@ -51,7 +51,7 @@
                       class="browse-info-icon"
                       src="/static/images/browse-icon.png"
                     />
-                    <text class="browse-info-count">{{ item.count }}</text>
+                    <text class="browse-info-count">{{ $utils.numberTransformation(item.count)  }}</text>
                   </view>
                 </view>
               </view>
@@ -164,7 +164,7 @@ export default {
           address: "老徐家 大蒜炒肉特惠打折",
           image:
             "https://img2.baidu.com/it/u=3744598050,4191464688&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1663866000&t=dd6c54f6994c9a937449567225badfed",
-          count: 10,
+          count: 10000,
           title: "卡布奇诺甜品套餐",
         },
       ],

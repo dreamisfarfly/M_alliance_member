@@ -17,7 +17,7 @@
           <label class="form-list-label">国家/地区</label>
           <view>中国大陆</view>
         </view>
-        <img class="form-list-operation" src="/static/images/right-icon.png" />
+        <img class="form-list-operation" src="/static/images/fine-right-icon.png" />
       </view>
       <view class="form-list form-list-separator">
         <label class="form-list-label">+86</label>

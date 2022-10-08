@@ -82,11 +82,13 @@ export default {};
 </script>
 
 <style lang="less" scoped>
+page{
+	background: #c5a285;
+}
 .coupon-code {
   width: 100%;
   //height: 100vh;
   height: auto;
-  background: #c5a285;
   padding: 232rpx 30rpx 146rpx 30rpx;
   box-sizing: border-box;
   display: flex;

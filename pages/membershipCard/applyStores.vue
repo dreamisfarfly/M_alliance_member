@@ -14,8 +14,8 @@
     </u-navbar>
     <!-- end 导航栏 -->
     <!-- start store-list-content -->
-    <view class="store-list-content">
-      <view style="height: 100vh">
+    <view class="store-list-content" id="classify-content">
+      <view :style="{ height: height + 'rpx' }">
         <Classify :classifyList="classifyList">
           <template v-slot:content>
             <ShopCard v-for="(item, key) in 10" :key="key"></ShopCard>
@@ -39,6 +39,7 @@ export default {
       background: {
         backgroundColor: "#FFFFFF",
       },
+      height: 0,
       // 分类列表
       classifyList: [
         {
@@ -59,7 +60,7 @@ export default {
         },
         {
           id: 4,
-          name: "医疗医疗"
+          name: "医疗医疗",
         },
         {
           id: 7,
@@ -67,6 +68,21 @@ export default {
         },
       ],
     };
+  },
+  onReady() {
+    let that = this;
+    uni.getSystemInfo({
+      success: function (res) {
+        uni
+          .createSelectorQuery()
+          .select("#classify-content")
+          .boundingClientRect(function (data) {
+            that.height = res.windowHeight - data.top;
+            that.height*=2
+          })
+          .exec();
+      },
+    });
   },
 };
 </script>

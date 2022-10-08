@@ -1,10 +1,13 @@
 import App from './App'
+import utils from './utils/utils'
 
 // #ifndef VUE3
 import Vue from 'vue'
 
 import uView from 'uview-ui';
 Vue.use(uView);
+
+Vue.prototype.$utils = utils;
 
 Vue.config.productionTip = false
 App.mpType = 'app'
