@@ -206,7 +206,7 @@ export default {
           bottom: 0;
           left: 0;
           right: 0;
-          width: 160rpx;
+          width: 100%;
           height: 42rpx;
           background: #ffdaad;
           border-radius: 0 0 18rpx 18rpx;
