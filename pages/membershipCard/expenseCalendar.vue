@@ -149,6 +149,7 @@ export default {
             font-size: 28rpx;
             font-weight: 400;
             color: #000000;
+            line-height: 40rpx;
           }
           .info-price {
             font-size: 28rpx;
@@ -161,6 +162,7 @@ export default {
           font-weight: 400;
           color: #b5b5b5;
           margin-top: 6rpx;
+          line-height: 34rpx;
         }
       }
     }
