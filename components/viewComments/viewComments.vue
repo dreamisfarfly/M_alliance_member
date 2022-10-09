@@ -240,7 +240,7 @@
         .comment-label {
           margin-right: 20rpx;
           margin-top: 30rpx;
-          padding: 4rpx 20rpx 6rpx 20rpx;
+          padding: 6rpx 20rpx 6rpx 20rpx;
           box-sizing: border-box;
           border-radius: 8rpx;
           border: 2rpx solid #c78125;

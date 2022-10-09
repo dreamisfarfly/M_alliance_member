@@ -26,7 +26,7 @@
         <view class="ticket-no">券号：35465765863874</view>
         <!-- end ticket-no -->
         <!-- start verification -->
-        <view class="verification">自助核销</view>
+        <view class="verification" @click="$utils.jump('/pages/membershipCard/settleAccounts')">自助核销</view>
         <!-- end verification -->
       </view>
       <!-- end qr-code-info -->

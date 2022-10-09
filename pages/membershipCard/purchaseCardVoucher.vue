@@ -110,7 +110,7 @@ export default {
             }
           }
           .sold-out {
-            padding: 6rpx 14rpx 8rpx 16rpx;
+            padding: 8rpx 14rpx 8rpx 16rpx;
             box-sizing: border-box;
             border: 2rpx solid #60b251;
             border-radius: 6rpx;

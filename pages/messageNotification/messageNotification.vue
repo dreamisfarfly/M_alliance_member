@@ -21,7 +21,7 @@
                   <view class="browse-info">
                     <img
                       class="browse-info-icon"
-                      src="/static/images/browse-icon.png"
+                      src="/static/images/bai-browse-icon.png"
                     />
                     <text class="browse-info-count">{{ $utils.numberTransformation(item.count) }}</text>
                   </view>
@@ -49,7 +49,7 @@
                   <view class="browse-info">
                     <img
                       class="browse-info-icon"
-                      src="/static/images/browse-icon.png"
+                      src="/static/images/bai-browse-icon.png"
                     />
                     <text class="browse-info-count">{{ $utils.numberTransformation(item.count)  }}</text>
                   </view>
@@ -111,7 +111,7 @@ export default {
             "/static/images/select-message-notification-icon.png",
           text: "消息通知",
           pagePath: "/pages/messageNotification/messageNotification",
-          count: 1,
+          count: 100,
         },
       ],
       // 当前浏览页

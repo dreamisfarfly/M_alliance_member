@@ -23,7 +23,7 @@
 					></u-icon>
 					<u-badge :count="item.count" :is-dot="item.isDot" :bgColor="countLabelBgColor" :fontSize="countLabelFontSize"
 						v-if="item.count || item.isDot"
-						:offset="[-2, getOffsetRight(item.count, item.isDot)]"
+						:offset="[-1, getOffsetRight(item.count, item.isDot)-2]"
 					></u-badge>
 				</view>
 				<view class="u-tabbar__content__item__text" :style="{

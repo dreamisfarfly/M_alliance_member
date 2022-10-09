@@ -17,7 +17,7 @@
             <img class="user-buddha" src="@/static/images/qr-code-icon.png" />
             <text class="user-name">刘小姐</text>
           </view>
-          <img class="qr-code-icon" src="@/static/images/qr-code-icon.png" />
+          <img class="qr-code-icon" src="@/static/images/qr-code-icon.png" @click="$utils.jump('/pages/membershipCard/couponCode')"/>
         </view>
         <!-- end 会员卡头部用户信息栏 -->
         <!-- start 会员卡头部用户NO -->

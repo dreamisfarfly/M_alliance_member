@@ -69,8 +69,10 @@ export default {
     width: 240rpx;
     height: 100%;
     padding-left: 16rpx;
+    padding-bottom: 26rpx;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
     .information-img {
@@ -89,7 +91,7 @@ export default {
   .coupon-card-basic-detailed-information {
     flex: 1;
     padding-left: 30rpx;
-    padding-top: 22rpx;
+    padding-top: 30rpx;
     padding-right: 46rpx;
     box-sizing: border-box;
     .detailed-information-name {

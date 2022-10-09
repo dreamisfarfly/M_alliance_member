@@ -165,7 +165,8 @@ export default {
     width: 152rpx;
     //height: 100%;
     height: auto;
-    padding-left: 30rpx;
+    padding-left: 36rpx;
+    padding-bottom: 24rpx;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -180,7 +181,7 @@ export default {
   }
   .coupon-info-card {
     flex: 1;
-    padding: 6rpx 46rpx 42rpx 16rpx;
+    padding: 6rpx 46rpx 42rpx 24rpx;
     box-sizing: border-box;
     .coupon-info-card-header {
       padding-top: 24rpx;

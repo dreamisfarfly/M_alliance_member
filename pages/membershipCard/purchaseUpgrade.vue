@@ -118,7 +118,7 @@ export default {
       margin-top: 14rpx;
       width: 396rpx;
       height: 2rpx;
-      border: 2rpx solid rgba(253, 233, 205, 0.3);
+      background: rgba(253, 233, 205, 0.3);
     }
     .equity-subheading {
       margin-top: 10rpx;
@@ -131,7 +131,6 @@ export default {
       margin-top: 72rpx;
       width: 100%;
       display: flex;
-      align-items: center;
       padding: 0 48rpx;
       box-sizing: border-box;
       justify-content: space-between;
@@ -150,6 +149,8 @@ export default {
         font-weight: 500;
         letter-spacing: 2rpx;
         color: #ffdaad;
+        display: flex;
+        align-items: center;
       }
     }
   }
@@ -190,13 +191,13 @@ export default {
             background-size: 100% 100%;
         }
         .combo-list-title {
-          margin-top: 10rpx;
+          margin-top: 12rpx;
           font-size: 22rpx;
           font-weight: 400;
           color: #ffffff;
         }
         .combo-list-price {
-          margin-top: 6rpx;
+          margin-top: 10rpx;
           font-size: 38rpx;
           font-weight: 400;
           color: #ebc398;

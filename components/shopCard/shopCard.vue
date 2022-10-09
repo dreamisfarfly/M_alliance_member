@@ -120,7 +120,8 @@ export default {
       color: #666666;
       .location-icon {
         margin-right: 6rpx;
-        margin-top: 6rpx;
+        display: flex;
+        align-items: center;
         width: 20rpx;
         height: 26rpx;
       }
