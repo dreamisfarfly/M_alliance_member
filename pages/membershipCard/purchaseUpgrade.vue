@@ -32,7 +32,7 @@
           v-for="(item, key) in comboList"
           :key="key"
           :style="{ 'margin-left': key > 0 ? '56rpx' : '' }"
-          @click="defaultOption=key"
+          @click="defaultOption = key"
         >
           <view v-if="defaultOption == key" class="select-combo"></view>
           <view class="combo-list-title">{{ item.name }}</view>
@@ -42,7 +42,9 @@
           <view class="combo-list-time">{{ item.duration }}天</view>
         </view>
       </view>
-      <view class="payment-btn">立即支付</view>
+      <view class="payment-btn">
+        <text class="payment-btn-font">立即支付</text>
+      </view>
       <view class="activation-code">输入激活码></view>
     </view>
     <!-- end member-vessel -->
@@ -113,6 +115,10 @@ export default {
       font-size: 36rpx;
       color: #ffc98e;
       letter-spacing: 4rpx;
+      text-shadow: 0 2rpx 2rpx rgba(0, 0, 0, 0.5);
+      background: linear-gradient(270deg, #ffefd6 0%, #f1c18c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .separator {
       margin-top: 14rpx;
@@ -181,23 +187,23 @@ export default {
         position: relative;
         box-sizing: border-box;
         position: relative;
-        .select-combo{
-            position: absolute;
-            width: 50rpx;
-            height: 48rpx;
-            top: 0;
-            right: 0;
-            background: url('/static/images/select-combo-icon.png');
-            background-size: 100% 100%;
+        .select-combo {
+          position: absolute;
+          width: 50rpx;
+          height: 48rpx;
+          top: 0;
+          right: 0;
+          background: url("/static/images/select-combo-icon.png");
+          background-size: 100% 100%;
         }
         .combo-list-title {
-          margin-top: 12rpx;
+          margin-top: 20rpx;
           font-size: 22rpx;
           font-weight: 400;
           color: #ffffff;
         }
         .combo-list-price {
-          margin-top: 10rpx;
+          margin-top: 14rpx;
           font-size: 38rpx;
           font-weight: 400;
           color: #ebc398;
@@ -227,16 +233,28 @@ export default {
       box-shadow: 0 6rpx 16rpx 0 rgba(17, 15, 13, 0.39);
       border-radius: 16px;
       border: 2rpx solid rgba(255, 218, 173, 1);
-      text-align: center;
-      line-height: 80rpx;
-      font-size: 32rpx;
-      font-weight: 600;
-      color: #ffc98e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .payment-btn-font {
+        font-size: 32rpx;
+        font-weight: 600;
+        color: #ffc98e;
+        text-shadow: 0 2rpx 2rpx rgba(0, 0, 0, 0.5);
+        background: linear-gradient(270deg, #ffefd6 0%, #f1c18c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
     .activation-code {
       margin-top: 36rpx;
       font-size: 24rpx;
       color: #ffc98e;
+      font-weight: 600;
+      text-shadow: 0 2rpx 2rpx rgba(0, 0, 0, 0.5);
+      background: linear-gradient(270deg, #ffefd6 0%, #f1c18c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
