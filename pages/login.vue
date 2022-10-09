@@ -108,6 +108,7 @@ export default {
         box-sizing: border-box;
         border-bottom: 2rpx solid rgba(0, 0, 0, 0.1);
         display: flex;
+        align-items: center;
         .form-list-icon {
           width: 44rpx;
           height: 44rpx;
@@ -161,11 +162,13 @@ export default {
         font-size: 24rpx;
         color: #999999;
         text-align: center;
+        line-height: 34rpx;
       }
       .form-agreement {
         font-size: 24rpx;
         color: #c78125;
         text-align: center;
+        line-height: 34rpx;
       }
     }
   }
