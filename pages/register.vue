@@ -130,14 +130,14 @@
 			align-items: center;
 			flex-direction: column;
 			padding-bottom: 38rpx;
-			margin-top: 44rpx;
+			margin-top: 72rpx;
 			box-sizing: border-box;
 
 			.equity-name {
 				margin-top: 144rpx;
 				font-family: AlimamaShuHeiTi;
 				font-size: 36rpx;
-                font-weight: 550;
+                font-weight: 700;
 				color: #333333;
 				letter-spacing: 4rpx;
 			}
@@ -204,14 +204,15 @@
 					font-size: 28rpx;
 					color: #333333;
 					text-align: left;
+					font-weight: 600;
 				}
 			}
 
 			.required-info-conent {
-				margin-top: 50rpx;
-
+				margin-top: 22rpx;
 				.required-info-list {
 					display: flex;
+					align-items: center;
 					padding: 28rpx 0;
 					box-sizing: border-box;
 					border-bottom: 2rpx solid rgba(0,0,0,0.1);
@@ -258,14 +259,14 @@
 					}
 
 					.combo-list-title {
-						margin-top: 10rpx;
+						margin-top: 20rpx;
 						font-size: 22rpx;
 						font-weight: 400;
 						color: #ffffff;
 					}
 
 					.combo-list-price {
-						margin-top: 6rpx;
+						margin-top: 12rpx;
 						font-size: 38rpx;
 						font-weight: 400;
 						color: #ebc398;
