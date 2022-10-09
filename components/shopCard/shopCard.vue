@@ -1,6 +1,6 @@
 <template>
   <!-- start shop-card -->
-  <view class="shop-card"  @click="$utils.jump('/pages/membershipCard/store')">
+  <view class="shop-card" @click="$utils.jump('/pages/membershipCard/store')">
     <!-- start shop-info-content -->
     <view class="shop-info-content">
       <img src="" class="shop-img" />
@@ -58,9 +58,10 @@ export default {
       flex: 1;
       margin-left: 10rpx;
       .shop-info-name {
-        font-size: 24rpx;
+        font-size: 28rpx;
         font-weight: 500;
         color: #000000;
+        line-height: 40rpx;
       }
       .score-info {
         margin-top: 6rpx;
@@ -71,10 +72,11 @@ export default {
           font-size: 20rpx;
           font-weight: 600;
           color: #999999;
+          line-height: 28rpx;
         }
       }
       .discount-content {
-        margin-top: 10rpx;
+        margin-top: 20rpx;
         justify-content: space-between;
         display: flex;
         .discount-vessel {
@@ -111,6 +113,7 @@ export default {
   .location-info {
     justify-content: space-between;
     display: flex;
+    align-items: center;
     margin-top: 22rpx;
     .info {
       display: flex;
