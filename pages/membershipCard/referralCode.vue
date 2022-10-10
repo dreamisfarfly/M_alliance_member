@@ -1,6 +1,6 @@
 <template>
   <!-- start referral-code -->
-  <view class="referral-code">
+  <view class="referral-code" :style="{height: swiperHeight}">
     <!-- start referral-code-bak -->
     <img class="referral-code-bak" src="" />
     <!-- end referral-code-bak -->
@@ -74,9 +74,30 @@
 
 <script>
 export default {
+  data(){
+    return {
+      swiperHeight: '',
+    }
+  },
   mounted() {
     var a = document.getElementsByClassName("uni-page-head-hd")[0];
     a.style.opacity = 0;
+  },
+  mounted() {
+    let that = this;
+    uni.getSystemInfo({
+      success: (resu) => {
+        // resu 可以获取当前屏幕的高度
+        const query = uni.createSelectorQuery();
+        query.select(".referral-code").boundingClientRect();
+        query.exec((res) => {
+          that.swiperHeight = resu.windowHeight - res[0].top + "px"; //屏幕的高度减去当前swiper距离顶部的高度就是剩余屏幕的高度 然后动态赋值给swiper
+          console.log("页面的剩余高度", res[0].top);
+          console.log(res)
+        });
+      },
+      fail: (res) => {},
+    });
   },
 };
 </script>
