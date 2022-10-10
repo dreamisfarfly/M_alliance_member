@@ -14,8 +14,8 @@
     </u-navbar>
     <!-- end 导航栏 -->
     <!-- start store-list-content -->
-    <view class="store-list-content" id="classify-content">
-      <view :style="{ height: height + 'rpx' }">
+    <view class="store-list-content">
+      <view :style="{ height: swiperHeight }">
         <Classify :classifyList="classifyList">
           <template v-slot:content>
             <ShopCard v-for="(item, key) in 10" :key="key"></ShopCard>
@@ -39,7 +39,7 @@ export default {
       background: {
         backgroundColor: "#FFFFFF",
       },
-      height: 0,
+      swiperHeight: '',
       // 分类列表
       classifyList: [
         {
@@ -69,19 +69,20 @@ export default {
       ],
     };
   },
-  onReady() {
+  mounted() {
     let that = this;
     uni.getSystemInfo({
-      success: function (res) {
-        uni
-          .createSelectorQuery()
-          .select("#classify-content")
-          .boundingClientRect(function (data) {
-            that.height = res.windowHeight - data.top;
-            that.height*=2
-          })
-          .exec();
+      success: (resu) => {
+        // resu 可以获取当前屏幕的高度
+        const query = uni.createSelectorQuery();
+        query.select(".store-list-content").boundingClientRect();
+        query.exec((res) => {
+          that.swiperHeight = resu.windowHeight - res[0].top + "px"; //屏幕的高度减去当前swiper距离顶部的高度就是剩余屏幕的高度 然后动态赋值给swiper
+          console.log("页面的剩余高度", res[0].top);
+          console.log(res)
+        });
       },
+      fail: (res) => {},
     });
   },
 };
