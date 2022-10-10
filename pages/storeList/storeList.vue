@@ -73,7 +73,7 @@
         <!-- end classify-list -->
       </view>
       <!-- end classify-vessel -->
-      <view style="height: 100vh">
+      <view :style="{height: swiperHeight}" class="menu-vessel">
         <Classify :classifyList="classifyList">
           <template v-slot:content>
             <ShopCard v-for="(item, key) in 10" :key="key"></ShopCard>
@@ -209,6 +209,7 @@ export default {
           name: "xx",
         },
       ],
+      swiperHeight: 0,
     };
   },
   components: { Search, Classify, ShopCard },
@@ -219,6 +220,22 @@ export default {
     selectMenu(key) {
       this.selectIndex = key;
     },
+  },
+  mounted() {
+    let that = this;
+    uni.getSystemInfo({
+      success: (resu) => {
+        // resu 可以获取当前屏幕的高度
+        const query = uni.createSelectorQuery();
+        query.select(".menu-vessel").boundingClientRect();
+        query.exec((res) => {
+          that.swiperHeight = resu.windowHeight - res[0].top + "px"; //屏幕的高度减去当前swiper距离顶部的高度就是剩余屏幕的高度 然后动态赋值给swiper
+          console.log("页面的剩余高度", res[0].top);
+          console.log(res)
+        });
+      },
+      fail: (res) => {},
+    });
   },
 };
 </script>

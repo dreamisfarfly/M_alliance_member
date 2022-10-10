@@ -272,6 +272,7 @@
                   font-size: 28rpx;
                   font-weight: 500;
                   color: #333333;
+                  line-height: 40rpx;
                 }
                 .user-time {
                   font-size: 20rpx;
