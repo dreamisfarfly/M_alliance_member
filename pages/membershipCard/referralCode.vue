@@ -8,12 +8,17 @@
     <view class="referral-code-vessel">
       <!-- start tewitch-versionst-vessel -->
       <view class="tewitch-versionst-vessel">
-        <view class="tewitch-versionst">
+        <view class="tewitch-versionst" @click="isPulldown = !isPulldown">
           普通模版
           <img
             class="triangle-bottom-icon"
             src="/static/images/triangle-bottom-icon.png"
-        /></view>
+        />
+        <view class="tewitch-versionst-pulldown" v-if="isPulldown">
+          <view class="tewitch-versionst-pulldown-list">11</view>
+          <view class="tewitch-versionst-pulldown-list">11</view>
+        </view>
+      </view>
       </view>
       <!-- end tewitch-versionst-vessel -->
       <!-- start bottom-vessel -->
@@ -77,13 +82,19 @@ export default {
   data(){
     return {
       swiperHeight: '',
+      isPulldown: false,
     }
   },
   mounted() {
     var a = document.getElementsByClassName("uni-page-head-hd")[0];
     a.style.opacity = 0;
-  },
-  mounted() {
+
+    document.addEventListener('click', (e)=> {
+      if (e.target.className != 'tewitch-versionst' && e.target.className != 'tewitch-versionst-pulldown-list') {
+        this.isPulldown = false;
+      }
+    });
+ 
     let that = this;
     uni.getSystemInfo({
       success: (resu) => {
@@ -91,14 +102,12 @@ export default {
         const query = uni.createSelectorQuery();
         query.select(".referral-code").boundingClientRect();
         query.exec((res) => {
-          that.swiperHeight = resu.windowHeight - res[0].top + "px"; //屏幕的高度减去当前swiper距离顶部的高度就是剩余屏幕的高度 然后动态赋值给swiper
-          console.log("页面的剩余高度", res[0].top);
-          console.log(res)
+          that.swiperHeight = resu.windowHeight - res[0].top + "px";
         });
       },
       fail: (res) => {},
     });
-  },
+  }
 };
 </script>
 
@@ -134,10 +143,29 @@ export default {
         font-size: 28rpx;
         font-weight: 400;
         color: #ffffff;
+        position: relative;
+        z-index: 666;
         .triangle-bottom-icon {
           width: 14rpx;
           height: 10rpx;
           margin-left: 14rpx;
+        }
+        .tewitch-versionst-pulldown{
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: 50rpx;
+          background: #ffffff;
+          .tewitch-versionst-pulldown-list{
+            width: 100%;
+            height: 40rpx;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4rpx;
+          }
         }
       }
     }
