@@ -160,7 +160,7 @@ export default {
       border-radius: 16rpx;
       padding: 20rpx 28rpx;
       box-sizing: border-box;
-      .textarea {
+      textarea {
         width: 100%;
         height: 100%;
         font-size: 28rpx;

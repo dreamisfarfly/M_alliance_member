@@ -78,12 +78,21 @@
 </template>
 
 <script>
+import {getCouponsIndex} from "@/utils/api/api.js"
 export default {
   data(){
     return {
       swiperHeight: '',
       isPulldown: false,
     }
+  },
+  created(){
+    console.log(1111)
+    getCouponsIndex().then(res=>{
+
+    }).catch(err=>{
+
+    })
   },
   mounted() {
     var a = document.getElementsByClassName("uni-page-head-hd")[0];
